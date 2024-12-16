@@ -1,9 +1,12 @@
-// import Layout from "../composants/Layout";
 import { Link } from "react-router-dom";
 import ContactForm from "../composants/ContactForm";
 import Histoire from "../assets/histoire.jpg";
 import Benevole from "../assets/benevole.webp";
 import Actions from "../assets/actions.png";
+import Helena from "../assets/helena.png";
+import Olga from "../assets/olga.png";
+import Dora from "../assets/dora.png";
+import Clarisse from "../assets/clarisse.png";
 import Calendrier from "../assets/Calendrier.png";
 import LiveForGood from "../assets/Logo-live-for-good.png";
 import MangeVoyage from "../assets/Logo-Mange-Voyage-Aime.png";
@@ -12,12 +15,12 @@ import Pepite from "../assets/Logo-Pepite.png";
 const Accueil = () => {
   return (
     <div>
-      <section className='px-4 py-6 mx-6 bg-[#fdcd23] mt-12 mx-auto'>
+      <section className=' py-6 mx-6 bg-[#fdcd23] mt-12 flex justify-center rounded'>
         <div>
-          <div className='flex relative gap-2'>
+          <div className='flex relative gap-2 px-4 '>
             <div className='w-2/5 relative flex-shrink-0'>
               <img
-                className='absolute right-8 bottom-0 object-cover'
+                className='absolute right-8 bottom-{-1} object-cover rounded'
                 src={Histoire}
                 alt="image illustrant l'image de l'histoire de l'association"
               />
@@ -43,10 +46,10 @@ const Accueil = () => {
             </div>
           </div>
           <div className='flex flex-col'>
-            <div className='bg-[#bc378c] w-2/4 italic text-sm font-bold text-[#ffffff] rounded p-2 bg-opacity-60 mt-3 ml-auto'>
+            <div className='bg-[#bc378c] w-[55%] italic text-sm font-bold text-[#ffffff] rounded p-2 bg-opacity-60 mt-3 ml-auto'>
               <p>« J'adore ces moments de partage et d’entraide » Sonia.</p>
             </div>
-            <div className='bg-[#bc378c] w-2/4 italic text-sm font-bold text-[#ffffff] rounded p-2 bg-opacity-60 mt-3 mr-auto'>
+            <div className='bg-[#bc378c] w-[55%] italic text-sm font-bold text-[#ffffff] rounded p-2 bg-opacity-60 mt-3 mr-auto'>
               <p>
                 « Réunies... le réseau qui ne ressemble à rien d'autre de ce que
                 je connais [...] Tu es en train de créer une vraie dynamite
@@ -54,7 +57,7 @@ const Accueil = () => {
                 chemins pro ! » Rachel.
               </p>
             </div>
-            <div className='bg-[#bc378c] w-2/4 italic text-sm font-bold text-[#ffffff] rounded p-2 bg-opacity-60 mt-3 ml-auto'>
+            <div className='bg-[#bc378c] w-[55%] italic text-sm font-bold text-[#ffffff] rounded p-2 bg-opacity-60 mt-3 ml-auto'>
               <p>
                 « Merci à toi de nous réunir sur des sujets que nous reléguons
                 parfois au second plan par craintes ou par manque de temps »
@@ -65,31 +68,64 @@ const Accueil = () => {
         </div>
       </section>
 
-      <section className='px-4  mx-auto '>
+      <section>
         <h2 className='text-2xl font-bold my-12 text-[#bc378c] text-center tracking-wide'>
           Notre équipe de passionnée
         </h2>
-        <div className='flex flex-col'>
-          <div className='bg-[#bc378c] w-2/4 italic text-sm font-bold text-[#ffffff] rounded p-2 bg-opacity-60 mt-3 ml-auto'>
-            <p>« J'adore ces moments de partage et d’entraide » Sonia.</p>
+        <div className='flex flex-col gap-[3]'>
+          <div className=' italic text-sm font-bold rounded ml-auto w-[75%]'>
+            <img
+              className='object-cover w-[3/4]'
+              src={Helena}
+              alt='image Helena'
+            />
           </div>
-          <div className='bg-[#bc378c] w-2/4 italic text-sm font-bold text-[#ffffff] rounded p-2 bg-opacity-60 mt-3 mr-auto'>
-            <p>
-              « Réunies... le réseau qui ne ressemble à rien d'autre de ce que
-              je connais [...] Tu es en train de créer une vraie dynamite
-              féminine [...] toutes ensemble, n'importe quel sujet sur nos
-              chemins pro ! » Rachel.
-            </p>
+          <div className='italic text-sm font-bold rounded  mr-auto'>
+            <img className='object-cover' src={Olga} alt='image Olga' />
           </div>
-          <div className='bg-[#bc378c] w-2/4 italic text-sm font-bold text-[#ffffff] rounded p-2 bg-opacity-60 mt-3 ml-auto'>
-            <p>
-              « Merci à toi de nous réunir sur des sujets que nous reléguons
-              parfois au second plan par craintes ou par manque de temps »
-              Karine.
-            </p>
+          <div className='italic text-sm font-bold rounded  ml-auto'>
+            <img className='object-cover' src={Dora} alt='Image Dora' />
+          </div>
+          <div className='italic text-sm font-bold rounded  mr-auto'>
+            <img className='object-cover' src={Clarisse} alt='Image Clarisse' />
           </div>
         </div>
       </section>
+      {/* <section>
+        <h2 className='text-2xl font-bold my-12 text-[#bc378c] text-center tracking-wide'>
+          Notre équipe de passionnée
+        </h2>
+        <div className='flex flex-col gap-4'>
+          <div className='italic text-sm font-bold rounded ml-auto w-[75%]'>
+            <img
+              className='object-cover w-full rounded'
+              src={Helena}
+              alt='Image Helena'
+            />
+          </div>
+          <div className='italic text-sm font-bold rounded mr-auto w-[75%]'>
+            <img
+              className='object-cover w-full rounded'
+              src={Olga}
+              alt='Image Olga'
+            />
+          </div>
+          <div className='italic text-sm font-bold rounded ml-auto w-[75%]'>
+            <img
+              className='object-cover w-full rounded'
+              src={Dora}
+              alt='Image Dora'
+            />
+          </div>
+          <div className='italic text-sm font-bold rounded mr-auto w-[75%]'>
+            <img
+              className='object-cover w-full rounded'
+              src={Clarisse}
+              alt='Image Clarisse'
+            />
+          </div>
+        </div>
+      </section> */}
 
       <section
         className='h-[400px] bg-fixed  bg-contain bg-no-repeat  bg-center flex justify-center items-center text-white text-center mt-4'
@@ -98,19 +134,20 @@ const Accueil = () => {
         }}
       ></section>
 
-      <section className=' px-4   mx-auto '>
+      <section className=' px-4 mx-auto '>
         <div className='flex'>
           <div className='flex flex-col w-3/5  '>
             <h2 className='text-2xl pt-12 font-bold text-start text-[#bc378c]  tracking-wide'>
-              Lorem, ipsum dolor.
+              Nos actions
             </h2>
             <p className='mt-4 text-[#bc378c] font-semibold leading-relaxed'>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae
-              explicabo veniam aperiam eaque, perferendis ipsam dolore, commodi,
-              labore ab accusamus et excepturi libero voluptatum eos? Libero
-              sapiente voluptatibus, autem eius vitae ab alias minima doloremque
-              id ipsum natus accusantium dicta reprehenderit exercitationem ea
-              eaque officiis in? Esse explicabo facere ullam.
+              Nous organisons des activités variées pour soutenir les femmes
+              entrepreneures et porteuses de projets :
+            </p>
+            <p className='mt-4 text-[#bc378c] font-semibold leading-relaxed'>
+              Des rencontres mensuelles de partage d’experiences, des ateliers,
+              formations et webinaires, ainsi que des actions de médiation et
+              vulgarisation scientifique sur l'entrepreneuriat.
             </p>
           </div>
           <div className='w-2/5'>
@@ -136,12 +173,24 @@ const Accueil = () => {
           Nos partenaires
         </h2>
         <div className='flex justify-center items-center'>
-          <img src={LiveForGood} alt='Logo Live For Good' />
-          <img src={Pepite} alt='Logo Pepite' />
-          <img src={MangeVoyage} alt='Logo Mange Voyage Aime' />
+          <img
+            className='w-32 sm:w-40 md:w-48 objectif-contain'
+            src={LiveForGood}
+            alt='Logo Live For Good'
+          />
+          <img
+            className='w-32 sm:w-40 md:w-48 objectif-contain'
+            src={Pepite}
+            alt='Logo Pepite'
+          />
+          <img
+            className='w-32 sm:w-40 md:w-48 objectif-contain'
+            src={MangeVoyage}
+            alt='Logo Mange Voyage Aime'
+          />
         </div>
       </section>
-      <section className='px-4 text-center  mx-auto bg-[#fdcd23] py-10'>
+      <section className='flex flex-col px-4 justify-center items-center mt-12 mx-auto bg-[#fdcd23] py-12'>
         <h2 className='text-2xl font-semi-bold  text-[#ffffff] tracking-wide'>
           Inscrivez vous à notre newsletter !
         </h2>
