@@ -74,10 +74,10 @@ const Inscription = ({ setUser }) => {
       return;
     }
 
-    if (site && !/^https?:\/\/[\w.-]+\.[a-z]{2,6}/.test(site)) {
-      setErrorMessage("L'URL du site est invalide.");
-      return;
-    }
+    // if (site && !/^https?:\/\/[\w.-]+\.[a-z]{2,6}/.test(site)) {
+    //   setErrorMessage("L'URL du site est invalide.");
+    //   return;
+    // }
 
     try {
       const payload = {
@@ -114,13 +114,14 @@ const Inscription = ({ setUser }) => {
         //   site: site.trim(),
         // }
       );
-
+      console.log(response.data.token);
       if (response.data.token) {
         setUser(response.data.token);
         alert("Compte créé avec succès !");
-        navigate("/");
+        navigate("/connexion");
       }
     } catch (error) {
+      console.log(error);
       if (error.response && error.response.status === 409) {
         // Affiche le message d'erreur du backend
         setErrorMessage(error.response.data.error);
