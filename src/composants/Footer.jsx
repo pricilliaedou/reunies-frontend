@@ -80,8 +80,38 @@ const Footer = () => (
 
     <div className='mx-auto border-t border-white w-full md:w-[50%] sm:w-[75%] mt-4 p-8 text-center'>
       <p className='px-4'>
-        Site réalisé par les apprenantes, Pricillia, Laëtitia et Manon de
-        l'association Descodeuses
+        Site réalisé par les apprenantes,{" "}
+        <Link
+          to='https://github.com/pricilliaedou'
+          target='blank'
+          className='text-[#fdcd23]'
+        >
+          Pricillia
+        </Link>{" "}
+        ,{" "}
+        <Link
+          to='https://www.linkedin.com/in/la%C3%ABtitia-diafutua-035964319/'
+          target='blank'
+          className='text-[#fdcd23]'
+        >
+          Laëtitia
+        </Link>{" "}
+        et{" "}
+        <Link
+          to='https://www.behance.net/gallery/211963909/Portfolio-UX-design'
+          target='blank'
+          className='text-[#fdcd23]'
+        >
+          Manon{" "}
+        </Link>{" "}
+        de l'association{" "}
+        <Link
+          to='https://descodeuses.org/'
+          target='blank'
+          className='text-[#fdcd23]'
+        >
+          Descodeuses
+        </Link>
       </p>
     </div>
   </footer>
