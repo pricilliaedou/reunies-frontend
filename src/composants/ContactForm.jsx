@@ -1,10 +1,11 @@
 const ContactForm = () => {
   return (
     <form
+      id='contact'
       name='contact-reunies'
       method='POST'
       data-netlify='true'
-      className='max-w-md mx-auto bg-white p-6 rounded-md mb-4'
+      className='max-w-md mx-auto bg-white p-6 rounded-md mb-[120px]'
       style={{ boxShadow: "0 10px 15px rgba(0, 0, 0, 0.2)" }}
     >
       <input type='hidden' name='form-name' value='contact-reunies' />

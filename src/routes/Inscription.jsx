@@ -118,7 +118,7 @@ const Inscription = ({ setUser }) => {
       if (response.data.token) {
         setUser(response.data.token);
         alert("Compte créé avec succès !");
-        navigate("/connexion");
+        navigate("/");
       }
     } catch (error) {
       console.log(error);

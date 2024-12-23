@@ -20,12 +20,14 @@ function App() {
   const [username, setUsername] = useState(Cookies.get("username") || null);
   const setUser = (data) => {
     if (data) {
+      console.log(data);
       const { token, username } = data;
       setToken(token);
       setUsername(username);
       Cookies.set("token", token, { expires: 14 });
       Cookies.set("username", username, { expires: 14 });
-      console.log(token.username);
+      // console.log(token);
+      // console.log(username);
     } else {
       setToken(null);
       setUsername(null);
@@ -59,8 +61,12 @@ function App() {
         <Route
           path='/inscription'
           element={
-            <Layout setUser={setUser} token={token} username={username}>
-              <Inscription />
+            <Layout>
+              <Inscription
+                setUser={setUser}
+                token={token}
+                username={username}
+              />
             </Layout>
           }
         />

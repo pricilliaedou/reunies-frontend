@@ -1,7 +1,13 @@
+import { useNavigate } from "react-router-dom";
 import Header from "./Header";
+import Footer from "./Footer";
 import Hero from "../assets/hero.webp";
 
 const Layout = ({ children }) => {
+  const navigate = useNavigate();
+  const handleRedirect = () => {
+    navigate("/connexion");
+  };
   return (
     <div>
       <Header />
@@ -11,7 +17,7 @@ const Layout = ({ children }) => {
           backgroundImage: `url(${Hero})`,
         }}
       >
-        <div className='bg-black bg-opacity-40 p-8 rounded-md'>
+        <div className=' p-8 rounded-md'>
           <h1 className='text-4xl md:text-5xl font-bold text-[#fdcd23]'>
             Réunies
           </h1>
@@ -19,13 +25,17 @@ const Layout = ({ children }) => {
             pour Entreprendre au Féminin
           </p>
           <p className='mt-4 text-3xl font-bold'>au Féminin</p>
-          <button className='bg-[#fdcd23] text-[#ffffff] px-8 py-2 rounded mt-6 font-bold'>
+          <button
+            onClick={handleRedirect}
+            className='bg-[#fdcd23] text-[#ffffff] px-8 py-2 rounded mt-6 font-bold'
+          >
             Réseauter
           </button>
         </div>
       </section>
 
       <div>{children}</div>
+      <Footer />
     </div>
   );
 };

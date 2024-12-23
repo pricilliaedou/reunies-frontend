@@ -1,9 +1,14 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import Logo from "../assets/logo.svg";
 
 const Header = ({ token, username, setUser }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigate = useNavigate();
+
+  const handleRedirect = () => {
+    navigate("/connexion");
+  };
 
   return (
     <header>
@@ -40,11 +45,14 @@ const Header = ({ token, username, setUser }) => {
         <nav className='hidden md:flex space-x-4'>
           {!token ? (
             <>
-              <Link to='/reseautage'>Réseautage</Link>
-              <Link to='/histoire'>Notre histoire</Link>
-              <Link to='/actions'>Nos actions</Link>
-              <Link to='/contact'>Contact</Link>
-              <button className='bg-[#bc378c] text-[#ffffff] px-4 py-2 rounded'>
+              <Link to='/connexion'>Réseautage</Link>
+              <a href='/#histoire'>Notre histoire</a>
+              <a href='#actions'>Nos actions</a>
+              <a href='#contact'>Contact</a>
+              <button
+                onClick={handleRedirect}
+                className='bg-[#bc378c] text-[#ffffff] px-4 py-2 rounded'
+              >
                 Se connecter
               </button>
             </>

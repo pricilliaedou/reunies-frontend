@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import ContactForm from "../composants/ContactForm";
 import Histoire from "../assets/histoire.jpg";
 import Benevole from "../assets/benevole.webp";
@@ -13,9 +13,17 @@ import MangeVoyage from "../assets/Logo-Mange-Voyage-Aime.png";
 import Pepite from "../assets/Logo-Pepite.png";
 
 const Accueil = () => {
+  // const navigate = useNavigate();
+  // const handleRedirect = () => {
+  //   navigate("https://reunies.substack.com/");
+  // };
+
   return (
     <div>
-      <section className=' py-6 mx-6 bg-[#fdcd23] mt-12 flex justify-center rounded'>
+      <section
+        className=' py-6 mx-6 bg-[#fdcd23] mt-12 flex justify-center rounded'
+        id='histoire'
+      >
         <div>
           <div className='flex relative gap-2 px-4 '>
             <div className='w-2/5 relative flex-shrink-0'>
@@ -73,12 +81,8 @@ const Accueil = () => {
           Notre équipe de passionnée
         </h2>
         <div className='flex flex-col gap-[3]'>
-          <div className=' italic text-sm font-bold rounded ml-auto w-[75%]'>
-            <img
-              className='object-cover w-[3/4]'
-              src={Helena}
-              alt='image Helena'
-            />
+          <div className=' italic text-sm font-bold rounded ml-auto '>
+            <img className='object-cover' src={Helena} alt='image Helena' />
           </div>
           <div className='italic text-sm font-bold rounded  mr-auto'>
             <img className='object-cover' src={Olga} alt='image Olga' />
@@ -91,41 +95,6 @@ const Accueil = () => {
           </div>
         </div>
       </section>
-      {/* <section>
-        <h2 className='text-2xl font-bold my-12 text-[#bc378c] text-center tracking-wide'>
-          Notre équipe de passionnée
-        </h2>
-        <div className='flex flex-col gap-4'>
-          <div className='italic text-sm font-bold rounded ml-auto w-[75%]'>
-            <img
-              className='object-cover w-full rounded'
-              src={Helena}
-              alt='Image Helena'
-            />
-          </div>
-          <div className='italic text-sm font-bold rounded mr-auto w-[75%]'>
-            <img
-              className='object-cover w-full rounded'
-              src={Olga}
-              alt='Image Olga'
-            />
-          </div>
-          <div className='italic text-sm font-bold rounded ml-auto w-[75%]'>
-            <img
-              className='object-cover w-full rounded'
-              src={Dora}
-              alt='Image Dora'
-            />
-          </div>
-          <div className='italic text-sm font-bold rounded mr-auto w-[75%]'>
-            <img
-              className='object-cover w-full rounded'
-              src={Clarisse}
-              alt='Image Clarisse'
-            />
-          </div>
-        </div>
-      </section> */}
 
       <section
         className='h-[400px] bg-fixed  bg-contain bg-no-repeat  bg-center flex justify-center items-center text-white text-center mt-4'
@@ -134,7 +103,7 @@ const Accueil = () => {
         }}
       ></section>
 
-      <section className=' px-4 mx-auto '>
+      <section className=' px-4 mx-auto' id='actions'>
         <div className='flex'>
           <div className='flex flex-col w-3/5  '>
             <h2 className='text-2xl pt-12 font-bold text-start text-[#bc378c]  tracking-wide'>
@@ -194,11 +163,14 @@ const Accueil = () => {
         <h2 className='text-2xl font-semi-bold  text-[#ffffff] tracking-wide'>
           Inscrivez vous à notre newsletter !
         </h2>
-        <Link to={"/"}>
-          <button className='bg-[#ffffff] text-[#fdcd23] mt-4 py-2 px-10 rounded font-semi-bold'>
-            S'inscrire
-          </button>
-        </Link>
+
+        <a
+          href='https://reunies.substack.com/'
+          target='blank'
+          className='bg-[#ffffff] text-[#fdcd23] mt-4 py-2 px-10 rounded font-semi-bold'
+        >
+          S'inscrire
+        </a>
       </section>
       <section className='w-3/5 px-4 mx-auto py-10 mt-10'></section>
       <ContactForm />
