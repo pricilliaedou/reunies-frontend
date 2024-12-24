@@ -13,11 +13,6 @@ import MangeVoyage from "../assets/Logo-Mange-Voyage-Aime.png";
 import Pepite from "../assets/Logo-Pepite.png";
 
 const Accueil = () => {
-  // const navigate = useNavigate();
-  // const handleRedirect = () => {
-  //   navigate("https://reunies.substack.com/");
-  // };
-
   return (
     <div>
       <section
