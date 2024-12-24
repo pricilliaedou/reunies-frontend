@@ -20,7 +20,7 @@ export default defineConfig({
   plugins: [
     react(),
     eslint({
-      overrideConfigFile: "./eslint.config.cjs", // Indique le chemin explicite vers ESLint
+      overrideConfigFile: "./eslint.config.js", // Indique le chemin explicite vers ESLint
     }),
   ],
 });
