@@ -1,4 +1,3 @@
-// import { useNavigate } from "react-router-dom";
 import ContactForm from "../composants/ContactForm";
 import Histoire from "../assets/histoire.jpg";
 import Benevole from "../assets/benevole.webp";
