@@ -1,10 +1,9 @@
-//
-import forms from "@tailwindcss/forms";
-
+/** @type {import('tailwindcss').Config} */
 export default {
-  content: ["./src/**/*.{html,js,jsx,ts,tsx}"],
+  mode: "jit",
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    extend: { fontFamily: { montserrat: ["Montserrat", "sans-serif"] } },
   },
-  plugins: [forms],
+  plugins: [],
 };
