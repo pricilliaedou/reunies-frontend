@@ -3,7 +3,7 @@ import footer from "../assets/footer.webp";
 import LiveForGood from "../assets/Logo-live-for-good.png";
 import MangeVoyage from "../assets/Logo-Mange-Voyage-Aime.png";
 import Pepite from "../assets/Logo-Pepite.png";
-import Linkedin from "../assets/Linkedin.png";
+import Linkedin from "../assets/linkedin.png";
 import Instagram from "../assets/insta.png";
 
 const Footer = () => (
