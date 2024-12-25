@@ -6,7 +6,7 @@ import Helena from "../assets/helena.png";
 import Olga from "../assets/olga.png";
 import Dora from "../assets/dora.png";
 import Clarisse from "../assets/clarisse.png";
-import Calendrier from "../assets/Calendrier.png";
+import Calendrier from "../assets/calendrier.png";
 import LiveForGood from "../assets/Logo-live-for-good.png";
 import MangeVoyage from "../assets/Logo-Mange-Voyage-Aime.png";
 import Pepite from "../assets/Logo-Pepite.png";
