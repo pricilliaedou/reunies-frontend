@@ -139,7 +139,7 @@ const Connexion = ({ setUser }) => {
             </Link>
 
             <Link
-              to={"/"}
+              to={"/inscription"}
               className='underline text-center text-sm text-[#bc378c] block mt-2'
             >
               Vous n'avez pas encore de compte? S'inscrire maintenant

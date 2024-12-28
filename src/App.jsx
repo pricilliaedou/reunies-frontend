@@ -45,7 +45,7 @@ function App() {
         <Route
           path='/'
           element={
-            <Layout setUser={setUser} token={token} username={username}>
+            <Layout setUser={setUser}>
               <Accueil />
             </Layout>
           }
@@ -53,8 +53,8 @@ function App() {
         <Route
           path='/connexion'
           element={
-            <Layout setUser={setUser} token={token} username={username}>
-              <Connexion />
+            <Layout>
+              <Connexion setUser={setUser} />
             </Layout>
           }
         />
