@@ -23,13 +23,13 @@ const Connexion = ({ setUser }) => {
         }
       );
       if (response.data.token) {
-        // console.log(response.data);
         setUser({
           token: response.data.token,
           username: response.data.account.username,
         });
         setIsLoading(false);
-        navigate("/");
+        alert("Bienvenue sur la page réseautage !");
+        navigate("/reseautage");
       } else {
         alert("Une erreur est survenue, merci de réessayer..");
       }

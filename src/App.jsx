@@ -26,8 +26,6 @@ function App() {
       setUsername(username);
       Cookies.set("token", token, { expires: 14 });
       Cookies.set("username", username, { expires: 14 });
-      // console.log(token);
-      // console.log(username);
     } else {
       setToken(null);
       setUsername(null);
@@ -36,6 +34,35 @@ function App() {
       Cookies.remove("username");
     }
   };
+  const activites = [
+    "Informatique",
+    "Santé",
+    "Commerce",
+    "Éducation",
+    "Transport",
+    "Tourisme",
+  ];
+
+  const regions = [
+    "Auvergne-Rhône-Alpes",
+    "Bourgogne-Franche-Comté",
+    "Bretagne",
+    "Centre-Val de Loire",
+    "Corse",
+    "Grand Est",
+    "Hauts-de-France",
+    "Île-de-France",
+    "Normandie",
+    "Nouvelle-Aquitaine",
+    "Occitanie",
+    "Pays de la Loire",
+    "Provence-Alpes-Côte d’Azur",
+    "Guadeloupe",
+    "Martinique",
+    "Guyane",
+    "La Réunion",
+    "Mayotte",
+  ];
   return (
     <Router>
       <div className='container mx-auto max-w-[1280px]'></div>
@@ -66,15 +93,21 @@ function App() {
                 setUser={setUser}
                 token={token}
                 username={username}
+                activites={activites}
+                regions={regions}
               />
             </Layout>
           }
         />
         <Route
-          path='/activites'
+          path='/reseautage'
           element={
-            <Layout setUser={setUser}>
-              <Reseautage />
+            <Layout>
+              <Reseautage
+                activites={activites}
+                regions={regions}
+                token={token}
+              />
             </Layout>
           }
         />

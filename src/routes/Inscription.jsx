@@ -3,15 +3,15 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
-const Inscription = ({ setUser }) => {
-  const activites = [
-    "Informatique",
-    "Santé",
-    "Commerce",
-    "Éducation",
-    "Transport",
-    "Tourisme",
-  ]; // Liste prédéfinie des secteurs d'activité
+const Inscription = ({ setUser, activites, regions }) => {
+  // const activites = [
+  //   "Informatique",
+  //   "Santé",
+  //   "Commerce",
+  //   "Éducation",
+  //   "Transport",
+  //   "Tourisme",
+  // ];
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -28,26 +28,26 @@ const Inscription = ({ setUser }) => {
   const [commentaire, setCommentaire] = useState("");
   const [errorMessage, setErrorMessage] = useState(null);
 
-  const regions = [
-    "Auvergne-Rhône-Alpes",
-    "Bourgogne-Franche-Comté",
-    "Bretagne",
-    "Centre-Val de Loire",
-    "Corse",
-    "Grand Est",
-    "Hauts-de-France",
-    "Île-de-France",
-    "Normandie",
-    "Nouvelle-Aquitaine",
-    "Occitanie",
-    "Pays de la Loire",
-    "Provence-Alpes-Côte d’Azur",
-    "Guadeloupe",
-    "Martinique",
-    "Guyane",
-    "La Réunion",
-    "Mayotte",
-  ];
+  // const regions = [
+  //   "Auvergne-Rhône-Alpes",
+  //   "Bourgogne-Franche-Comté",
+  //   "Bretagne",
+  //   "Centre-Val de Loire",
+  //   "Corse",
+  //   "Grand Est",
+  //   "Hauts-de-France",
+  //   "Île-de-France",
+  //   "Normandie",
+  //   "Nouvelle-Aquitaine",
+  //   "Occitanie",
+  //   "Pays de la Loire",
+  //   "Provence-Alpes-Côte d’Azur",
+  //   "Guadeloupe",
+  //   "Martinique",
+  //   "Guyane",
+  //   "La Réunion",
+  //   "Mayotte",
+  // ];
 
   const navigate = useNavigate();
 
@@ -118,7 +118,7 @@ const Inscription = ({ setUser }) => {
       if (response.data.token) {
         setUser(response.data.token);
         alert("Compte créé avec succès !");
-        navigate("/");
+        navigate("/reseautage");
       }
     } catch (error) {
       console.log(error);
