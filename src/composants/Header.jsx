@@ -58,8 +58,8 @@ const Header = ({ token, username, setUser }) => {
             </>
           ) : (
             <>
-              <Link to='/accueil'>Accueil</Link>
-              <Link to='/reseauter'>Réseauter</Link>
+              <Link to='/'>Accueil</Link>
+              <Link to='/reseautage'>Réseauter</Link>
               <p className='text-[#bc378c]'>{username}</p>
               <button
                 onClick={() => setUser(null)}
@@ -87,8 +87,8 @@ const Header = ({ token, username, setUser }) => {
               </>
             ) : (
               <>
-                <Link to='/accueil'>Accueil</Link>
-                <Link to='/reseauter'>Réseauter</Link>
+                <Link to='/'>Accueil</Link>
+                <Link to='/reseautage'>Réseauter</Link>
                 <p className='text-[#bc378c]'>{username}</p>
                 <button
                   onClick={() => setUser(null)}

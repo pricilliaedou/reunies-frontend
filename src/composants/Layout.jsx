@@ -3,14 +3,14 @@ import Header from "./Header";
 import Footer from "./Footer";
 import Hero from "../assets/hero.webp";
 
-const Layout = ({ children }) => {
+const Layout = ({ children, token, setUser, username }) => {
   const navigate = useNavigate();
   const handleRedirect = () => {
     navigate("/connexion");
   };
   return (
     <div>
-      <Header />
+      <Header token={token} setUser={setUser} username={username} />
       <section
         className='h-screen bg-fixed bg-center bg-cover flex justify-center items-center text-white text-center'
         style={{

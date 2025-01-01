@@ -72,7 +72,7 @@ function App() {
         <Route
           path='/'
           element={
-            <Layout setUser={setUser}>
+            <Layout setUser={setUser} token={token} username={username}>
               <Accueil />
             </Layout>
           }
@@ -80,7 +80,7 @@ function App() {
         <Route
           path='/connexion'
           element={
-            <Layout>
+            <Layout setUser={setUser} token={token} username={username}>
               <Connexion setUser={setUser} />
             </Layout>
           }
@@ -88,7 +88,7 @@ function App() {
         <Route
           path='/inscription'
           element={
-            <Layout>
+            <Layout setUser={setUser} token={token} username={username}>
               <Inscription
                 setUser={setUser}
                 token={token}
@@ -102,12 +102,8 @@ function App() {
         <Route
           path='/reseautage'
           element={
-            <Layout>
-              <Reseautage
-                activites={activites}
-                regions={regions}
-                token={token}
-              />
+            <Layout setUser={setUser} token={token} username={username}>
+              <Reseautage activites={activites} regions={regions} />
             </Layout>
           }
         />
