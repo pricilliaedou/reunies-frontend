@@ -29,20 +29,27 @@ const Reseautage = ({ activites, regions }) => {
     }
   };
 
-  const filterByRegion = () => {
-    if (!selectedRegion) return setFilteredUsers(users);
-    setFilteredUsers(users.filter((user) => user.region === selectedRegion));
+  const filterByRegion = (newRegion) => {
+    setSelectedRegion(newRegion);
+    if (!newRegion) {
+      setFilteredUsers(users);
+    } else {
+      setFilteredUsers(users.filter((user) => user.region === newRegion));
+    }
   };
 
-  const filterByVille = () => {
-    if (!selectedVille) return setFilteredUsers(users);
-    setFilteredUsers(
-      users.filter((user) =>
-        user.ville.toLowerCase().includes(selectedVille.toLowerCase())
-      )
-    );
+  const filterByVille = (newVille) => {
+    setSelectedVille(newVille);
+    if (!newVille) {
+      setFilteredUsers(users);
+    } else {
+      setFilteredUsers(
+        users.filter((user) =>
+          user.ville.toLowerCase().includes(newVille.toLowerCase())
+        )
+      );
+    }
   };
-
   return (
     <div className='reseautage-container p-8  w-[80%] mx-auto'>
       <div
@@ -80,10 +87,7 @@ const Reseautage = ({ activites, regions }) => {
         <div className='secondary-filters my-4'>
           <select
             value={selectedRegion}
-            onChange={(e) => {
-              setSelectedRegion(e.target.value);
-              filterByRegion();
-            }}
+            onChange={(e) => filterByRegion(e.target.value)}
             className='border p-2'
           >
             <option value=''>Toutes les régions</option>
@@ -93,15 +97,11 @@ const Reseautage = ({ activites, regions }) => {
               </option>
             ))}
           </select>
-
           <input
             type='text'
             placeholder='Filtrer par ville'
             value={selectedVille}
-            onChange={(e) => {
-              setSelectedVille(e.target.value);
-              filterByVille();
-            }}
+            onChange={(e) => filterByVille(e.target.value)}
             className='border p-2 ml-2'
           />
         </div>

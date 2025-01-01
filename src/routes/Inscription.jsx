@@ -169,7 +169,6 @@ const Inscription = ({ setUser, activites, regions }) => {
         />
       </div>
 
-      {/* Email et Password */}
       <div className='flex space-x-4'>
         <input
           type='email'
@@ -189,7 +188,6 @@ const Inscription = ({ setUser, activites, regions }) => {
         />
       </div>
 
-      {/* Ville et Région */}
       <div className='flex space-x-4'>
         <input
           type='text'
@@ -214,7 +212,6 @@ const Inscription = ({ setUser, activites, regions }) => {
         </select>
       </div>
 
-      {/* Nom entreprise et Secteur d'activité */}
       <div className='flex space-x-4'>
         <input
           type='text'
@@ -239,7 +236,6 @@ const Inscription = ({ setUser, activites, regions }) => {
         </select>
       </div>
 
-      {/* Description */}
       <textarea
         placeholder='Description (max. 50 caractères)'
         value={description}
@@ -248,7 +244,6 @@ const Inscription = ({ setUser, activites, regions }) => {
         className='w-full border border-[#bc378c] rounded-md p-3 text-sm focus:ring-blue-500 focus:border-blue-500'
       ></textarea>
 
-      {/* Site Internet et Réseaux sociaux */}
       <div className='flex space-x-4'>
         <input
           type='text'
@@ -266,7 +261,6 @@ const Inscription = ({ setUser, activites, regions }) => {
         />
       </div>
 
-      {/* Commentaire */}
       <textarea
         placeholder='Commentaire'
         value={commentaire}
@@ -275,7 +269,6 @@ const Inscription = ({ setUser, activites, regions }) => {
         className='w-full border border-[#bc378c] rounded-md p-3 text-sm focus:ring-blue-500 focus:border-blue-500'
       ></textarea>
 
-      {/* Bouton d'inscription */}
       <button
         type='submit'
         className='w-full bg-[#fdcd23] text-white font-bold py-3 rounded-md hover:bg-[#e6b91f]'
