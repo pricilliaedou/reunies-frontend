@@ -8,7 +8,7 @@ import Instagram from "../assets/insta.png";
 
 const Footer = () => (
   <footer
-    className='w-full bg-cover bg-center text-white'
+    className='w-full bg-cover bg-center text-white '
     style={{
       backgroundImage: `url(${footer})`,
     }}

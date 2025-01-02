@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import ContactForm from "../composants/ContactForm";
 import Histoire from "../assets/histoire.jpg";
 import Benevole from "../assets/benevole.webp";
@@ -135,22 +136,28 @@ const Accueil = () => {
         <h2 className='text-2xl font-bold my-12 text-[#bc378c] text-center tracking-wide'>
           Nos partenaires
         </h2>
-        <div className='flex justify-center items-center'>
-          <img
-            className='w-32 sm:w-40 md:w-48 max-w-full objectif-contain flex-shrink-0'
-            src={LiveForGood}
-            alt='Logo Live For Good'
-          />
-          <img
-            className='w-32 sm:w-40 md:w-48 max-w-full objectif-contain flex-shrink-0'
-            src={Pepite}
-            alt='Logo Pepite'
-          />
-          <img
-            className='w-32 sm:w-40 md:w-48 max-w-full objectif-contain flex-shrink-0'
-            src={MangeVoyage}
-            alt='Logo Mange Voyage Aime'
-          />
+        <div className='flex justify-center items-center gap-4 mt-4'>
+          <Link to='https://www.live-for-good.org/' target='blank'>
+            <img
+              className='object-contain h-15'
+              src={LiveForGood}
+              alt='Logo Live For Good'
+            />
+          </Link>
+          <Link to='https://pepite-pacaest.pepitizy.fr/fr' target='blank'>
+            <img
+              className='object-contain h-15'
+              src={Pepite}
+              alt='Logo Pepite'
+            />
+          </Link>
+          <Link to='https://mangevoyageaime.fr/' target='blank'>
+            <img
+              className='object-contain h-15'
+              src={MangeVoyage}
+              alt='Logo Mange Voyage Aime'
+            />
+          </Link>
         </div>
       </section>
       <section className='flex flex-col px-4 justify-center items-center mt-12 mx-auto bg-[#fdcd23] py-12'>
