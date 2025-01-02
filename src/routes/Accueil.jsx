@@ -15,19 +15,19 @@ const Accueil = () => {
   return (
     <div>
       <section
-        className=' py-6 mx-6 bg-[#fdcd23] mt-12 flex justify-center rounded'
+        className=' py-6 mx-6 bg-[#fdcd23] mt-12 flex flex-col sm:flex-col md:flex-row justify-center rounded'
         id='histoire'
       >
         <div>
-          <div className='flex relative gap-2 px-4 '>
-            <div className='w-2/5 relative flex-shrink-0'>
+          <div className='flex relative gap-2 px-4 w-full'>
+            <div className='w-2/5 relative flex-shrink-0 hidden md:block'>
               <img
                 className='absolute right-8 bottom-{-1} object-cover rounded'
                 src={Histoire}
                 alt="image illustrant l'image de l'histoire de l'association"
               />
             </div>
-            <div className='w-3/5  mt-10 pr-2'>
+            <div className='w-full md:w-3/5  mt-10 pr-2'>
               <h2 className='text-2xl font-bold text-[#bc378c]'>
                 Notre Histoire
               </h2>
@@ -48,10 +48,10 @@ const Accueil = () => {
             </div>
           </div>
           <div className='flex flex-col'>
-            <div className='bg-[#bc378c] w-[55%] italic text-sm font-bold text-[#ffffff] rounded p-2 bg-opacity-60 mt-3 ml-auto'>
+            <div className='bg-[#bc378c] w-[70%] sm:w-[55%] italic text-sm font-bold text-[#ffffff] rounded p-2 bg-opacity-60 mt-3 ml-auto'>
               <p>« J'adore ces moments de partage et d’entraide » Sonia.</p>
             </div>
-            <div className='bg-[#bc378c] w-[55%] italic text-sm font-bold text-[#ffffff] rounded p-2 bg-opacity-60 mt-3 mr-auto'>
+            <div className='bg-[#bc378c] w-[70%] sm:w-[55%] italic text-sm font-bold text-[#ffffff] rounded p-2 bg-opacity-60 mt-3 mr-auto'>
               <p>
                 « Réunies... le réseau qui ne ressemble à rien d'autre de ce que
                 je connais [...] Tu es en train de créer une vraie dynamite
@@ -59,7 +59,7 @@ const Accueil = () => {
                 chemins pro ! » Rachel.
               </p>
             </div>
-            <div className='bg-[#bc378c] w-[55%] italic text-sm font-bold text-[#ffffff] rounded p-2 bg-opacity-60 mt-3 ml-auto'>
+            <div className='bg-[#bc378c] w-[70%] sm:w-[55%] italic text-sm font-bold text-[#ffffff] rounded p-2 bg-opacity-60 mt-3 ml-auto'>
               <p>
                 « Merci à toi de nous réunir sur des sujets que nous reléguons
                 parfois au second plan par craintes ou par manque de temps »
@@ -98,8 +98,8 @@ const Accueil = () => {
       ></section>
 
       <section className=' px-4 mx-auto' id='actions'>
-        <div className='flex'>
-          <div className='flex flex-col w-3/5  '>
+        <div className='flex flex-col md:flex-row'>
+          <div className='flex flex-col  w-full md:w-3/5  '>
             <h2 className='text-2xl pt-12 font-bold text-start text-[#bc378c]  tracking-wide'>
               Nos actions
             </h2>
@@ -113,7 +113,7 @@ const Accueil = () => {
               vulgarisation scientifique sur l'entrepreneuriat.
             </p>
           </div>
-          <div className='w-2/5'>
+          <div className='w-full md:w-2/5'>
             <img
               src={Actions}
               alt='image pour illustrer les actions '
@@ -131,30 +131,30 @@ const Accueil = () => {
           />
         </div>
       </section>
-      <section className='px-4  mx-auto '>
+      <section className='px-4  mx-auto'>
         <h2 className='text-2xl font-bold my-12 text-[#bc378c] text-center tracking-wide'>
           Nos partenaires
         </h2>
         <div className='flex justify-center items-center'>
           <img
-            className='w-32 sm:w-40 md:w-48 objectif-contain'
+            className='w-32 sm:w-40 md:w-48 max-w-full objectif-contain flex-shrink-0'
             src={LiveForGood}
             alt='Logo Live For Good'
           />
           <img
-            className='w-32 sm:w-40 md:w-48 objectif-contain'
+            className='w-32 sm:w-40 md:w-48 max-w-full objectif-contain flex-shrink-0'
             src={Pepite}
             alt='Logo Pepite'
           />
           <img
-            className='w-32 sm:w-40 md:w-48 objectif-contain'
+            className='w-32 sm:w-40 md:w-48 max-w-full objectif-contain flex-shrink-0'
             src={MangeVoyage}
             alt='Logo Mange Voyage Aime'
           />
         </div>
       </section>
       <section className='flex flex-col px-4 justify-center items-center mt-12 mx-auto bg-[#fdcd23] py-12'>
-        <h2 className='text-2xl font-semi-bold  text-[#ffffff] tracking-wide'>
+        <h2 className='text-2xl font-semi-bold  text-[#ffffff] tracking-wide text-center'>
           Inscrivez vous à notre newsletter !
         </h2>
 
