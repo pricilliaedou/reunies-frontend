@@ -1,13 +1,8 @@
-import { useNavigate } from "react-router-dom";
 import Header from "./Header";
 import Footer from "./Footer";
 import Hero from "../assets/hero.webp";
 
-const Layout = ({ children, token, setUser, username }) => {
-  const navigate = useNavigate();
-  const handleRedirect = () => {
-    navigate("/connexion");
-  };
+const Layout = ({ dynamicContent, children, token, setUser, username }) => {
   return (
     <div>
       <Header token={token} setUser={setUser} username={username} />
@@ -17,21 +12,7 @@ const Layout = ({ children, token, setUser, username }) => {
           backgroundImage: `url(${Hero})`,
         }}
       >
-        <div className=' p-8 rounded-md'>
-          <h1 className='text-4xl md:text-5xl font-bold text-[#fdcd23]'>
-            Réunies
-          </h1>
-          <p className='mt-4 text-3xl font-bold'>
-            pour Entreprendre au Féminin
-          </p>
-          <p className='mt-4 text-3xl font-bold'>au Féminin</p>
-          <button
-            onClick={handleRedirect}
-            className='bg-[#fdcd23] text-[#ffffff] px-8 py-2 rounded mt-6 font-bold'
-          >
-            Réseauter
-          </button>
-        </div>
+        <div className=' p-8 rounded-md'>{dynamicContent}</div>
       </section>
 
       <div>{children}</div>

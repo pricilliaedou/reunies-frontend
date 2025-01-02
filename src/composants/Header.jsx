@@ -47,8 +47,8 @@ const Header = ({ token, username, setUser }) => {
             <>
               <Link to='/connexion'>Réseautage</Link>
               <a href='/#histoire'>Notre histoire</a>
-              <a href='#actions'>Nos actions</a>
-              <a href='#contact'>Contact</a>
+              <a href='/#actions'>Nos actions</a>
+              <a href='/#contact'>Contact</a>
               <button
                 onClick={handleRedirect}
                 className='bg-[#bc378c] text-[#ffffff] px-4 py-2 rounded'
@@ -73,15 +73,18 @@ const Header = ({ token, username, setUser }) => {
       </div>
 
       {isMenuOpen && (
-        <div className='md:hidden bg-gray-700'>
+        <div className='md:hidden '>
           <nav className='flex flex-col space-y-2 p-4'>
             {!token ? (
               <>
-                <Link to='/reseautage'>Réseautage</Link>
-                <Link to='/histoire'>Notre histoire</Link>
-                <Link to='/actions'>Nos actions</Link>
-                <Link to='/contact'>Contact</Link>
-                <button className='bg-[#bc378c] text-[#ffffff] px-4 py-2 rounded'>
+                <Link to='/connexion'>Réseautage</Link>
+                <a href='/#histoire'>Notre histoire</a>
+                <a href='/#actions'>Nos actions</a>
+                <a href='/#contact'>Contact</a>
+                <button
+                  onClick={handleRedirect}
+                  className='bg-[#bc378c] text-[#ffffff] px-4 py-2 rounded'
+                >
                   Se connecter
                 </button>
               </>

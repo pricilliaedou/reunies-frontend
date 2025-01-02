@@ -88,7 +88,7 @@ const Reseautage = ({ activites, regions }) => {
           <select
             value={selectedRegion}
             onChange={(e) => filterByRegion(e.target.value)}
-            className='border p-2'
+            className='border p-2 mb-4 mr-2'
           >
             <option value=''>Toutes les régions</option>
             {regions.map((region, index) => (
@@ -102,7 +102,7 @@ const Reseautage = ({ activites, regions }) => {
             placeholder='Filtrer par ville'
             value={selectedVille}
             onChange={(e) => filterByVille(e.target.value)}
-            className='border p-2 ml-2'
+            className='border p-2 '
           />
         </div>
       )}

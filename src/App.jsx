@@ -10,7 +10,6 @@ import Reseautage from "./routes/Reseautage";
 import Erreur from "./routes/Erreur";
 
 // Composants
-// import Header from "./composants/Header";
 import Layout from "./composants/Layout";
 
 import "./index.css";
@@ -66,13 +65,33 @@ function App() {
   return (
     <Router>
       <div className='container mx-auto max-w-[1280px]'></div>
-      {/* <Header setUser={setUser} token={token} username={username} /> */}
 
       <Routes>
         <Route
           path='/'
           element={
-            <Layout setUser={setUser} token={token} username={username}>
+            <Layout
+              dynamicContent={
+                <>
+                  <h1 className='text-4xl md:text-5xl font-bold text-[#fdcd23]'>
+                    Réunies
+                  </h1>
+                  <p className='mt-4 text-3xl font-bold'>
+                    pour Entreprendre au Féminin
+                  </p>
+                  <p className='mt-4 text-3xl font-bold'>au Féminin</p>
+                  <button
+                    onClick={() => (window.location.href = "/connexion")}
+                    className='bg-[#fdcd23] text-[#ffffff] px-8 py-2 rounded mt-6 font-bold'
+                  >
+                    Réseauter
+                  </button>
+                </>
+              }
+              setUser={setUser}
+              token={token}
+              username={username}
+            >
               <Accueil />
             </Layout>
           }
@@ -80,7 +99,16 @@ function App() {
         <Route
           path='/connexion'
           element={
-            <Layout setUser={setUser} token={token} username={username}>
+            <Layout
+              dynamicContent={
+                <h1 className='text-4xl md:text-5xl font-bold text-[#fdcd23]'>
+                  Connexion
+                </h1>
+              }
+              setUser={setUser}
+              token={token}
+              username={username}
+            >
               <Connexion setUser={setUser} />
             </Layout>
           }
@@ -88,7 +116,16 @@ function App() {
         <Route
           path='/inscription'
           element={
-            <Layout setUser={setUser} token={token} username={username}>
+            <Layout
+              dynamicContent={
+                <h1 className='text-4xl md:text-5xl font-bold text-[#fdcd23]'>
+                  Inscription
+                </h1>
+              }
+              setUser={setUser}
+              token={token}
+              username={username}
+            >
               <Inscription
                 setUser={setUser}
                 token={token}
@@ -102,7 +139,22 @@ function App() {
         <Route
           path='/reseautage'
           element={
-            <Layout setUser={setUser} token={token} username={username}>
+            <Layout
+              dynamicContent={
+                <>
+                  <h1 className='text-4xl md:text-5xl font-bold text-[#fdcd23]'>
+                    Réunies
+                  </h1>
+                  <p className='mt-4 text-3xl font-bold'>
+                    pour Entreprendre au Féminin
+                  </p>
+                  <p className='mt-4 text-3xl font-bold'>au Féminin</p>
+                </>
+              }
+              setUser={setUser}
+              token={token}
+              username={username}
+            >
               <Reseautage activites={activites} regions={regions} />
             </Layout>
           }
