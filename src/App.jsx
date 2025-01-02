@@ -76,9 +76,7 @@ function App() {
                   <h1 className='text-4xl md:text-5xl font-bold text-[#fdcd23]'>
                     Réunies
                   </h1>
-                  <p className='mt-4 text-3xl font-bold'>
-                    pour Entreprendre au Féminin
-                  </p>
+                  <p className='mt-4 text-3xl font-bold'>pour Entreprendre</p>
                   <p className='mt-4 text-3xl font-bold'>au Féminin</p>
                   <button
                     onClick={() => (window.location.href = "/connexion")}
