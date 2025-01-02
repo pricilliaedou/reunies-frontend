@@ -12,11 +12,12 @@ const Header = ({ token, username, setUser }) => {
 
   return (
     <header>
-      <div className='flex items-center justify-between px-4 py-3 md:px-8'>
-        <Link to='/' className='w-1/3'>
+      <div className='flex items-center justify-between pr-4 py-3'>
+        <Link to='/' className='w-[1/3] sm:w-[1/5]'>
           <img
             src={Logo}
             alt="Logo de l'association réunies pour entreprendre au féminin"
+            className='w-[200px]'
           />
         </Link>
 
@@ -42,7 +43,7 @@ const Header = ({ token, username, setUser }) => {
           </button>
         </div>
 
-        <nav className='hidden md:flex space-x-4'>
+        <nav className='hidden md:flex space-x-4 items-center justify-center font-semi-bold'>
           {!token ? (
             <>
               <Link to='/connexion'>Réseautage</Link>
@@ -73,7 +74,7 @@ const Header = ({ token, username, setUser }) => {
       </div>
 
       {isMenuOpen && (
-        <div className='md:hidden '>
+        <div className='md:hidden'>
           <nav className='flex flex-col space-y-2 p-4'>
             {!token ? (
               <>
