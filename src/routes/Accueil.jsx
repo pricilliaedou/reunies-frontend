@@ -7,6 +7,7 @@ import Helena from "../assets/helena.png";
 import Olga from "../assets/olga.png";
 import Dora from "../assets/dora.png";
 import Clarisse from "../assets/clarisse.png";
+import Linkedin from "../assets/linkedin.png";
 import Calendrier from "../assets/calendrier.png";
 import LiveForGood from "../assets/Logo-live-for-good.png";
 import MangeVoyage from "../assets/Logo-Mange-Voyage-Aime.png";
@@ -75,18 +76,107 @@ const Accueil = () => {
         <h2 className='text-2xl font-bold my-12 text-[#bc378c] text-center tracking-wide'>
           Notre équipe de passionnée
         </h2>
-        <div className='flex flex-col gap-[3]'>
-          <div className=' italic text-sm font-bold rounded ml-auto '>
-            <img className='object-cover' src={Helena} alt='image Helena' />
+        <div className='flex flex-col gap-3 sm:gap-4'>
+          <div className='text-sm font-bold  relative flex items-center ml-auto'>
+            <img
+              className='object-cover w-full h-auto'
+              src={Helena}
+              alt='image Helena'
+            />
+            <div className='absolute left-1/2 transform -translate-x-1/2 top-1/2 -translate-y-1/2 w-[30%]'>
+              <h2 className='text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-[#fdcd23] whitespace-nowrap'>
+                Helena DAGNOGO
+              </h2>
+              <div className='flex items-center gap-4'>
+                <p className='text-sm sm:text-base md:text-lg lg:text-xl text-[#ffffff]'>
+                  Présidente
+                </p>
+                <Link
+                  to='https://www.linkedin.com/in/helena-dagnogo-4ab4aa178'
+                  target='blank'
+                >
+                  <img
+                    className='object-contain w-[20px] min-w-[20px] h-auto'
+                    src={Linkedin}
+                    alt='Logo Linkedin'
+                  />
+                </Link>
+              </div>
+            </div>
           </div>
-          <div className='italic text-sm font-bold rounded  mr-auto'>
-            <img className='object-cover' src={Olga} alt='image Olga' />
+
+          <div className='text-sm font-bold  relative flex items-center mr-auto'>
+            <img
+              className='object-cover w-full h-auto'
+              src={Olga}
+              alt='image Olga'
+            />
+            <div className='absolute left-1/2 transform -translate-x-1/2 top-1/2 -translate-y-1/2 w-[30%] flex flex-col items-end'>
+              <h2 className='text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-[#fdcd23] whitespace-nowrap'>
+                Olga MADZIGON
+              </h2>
+              <div className='flex items-center gap-4 flex-row-reverse'>
+                <p className='text-sm sm:text-base md:text-lg lg:text-xl text-[#ffffff]'>
+                  Vice-présidente & responsable des formations et ateliers
+                </p>
+                <Link
+                  to='https://www.linkedin.com/in/helena-dagnogo-4ab4aa178'
+                  target='blank'
+                >
+                  <img
+                    className='object-contain w-[20px] min-w-[20px] h-auto'
+                    src={Linkedin}
+                    alt='Logo Linkedin'
+                  />
+                </Link>
+              </div>
+            </div>
           </div>
-          <div className='italic text-sm font-bold rounded  ml-auto'>
+          <div className='text-sm font-bold  relative flex items-center ml-auto'>
             <img className='object-cover' src={Dora} alt='Image Dora' />
+            <div className='absolute left-1/2 transform -translate-x-1/2 top-1/2 -translate-y-1/2 w-[30%]'>
+              <h2 className='text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-[#fdcd23] whitespace-nowrap'>
+                Dora MOUALHI
+              </h2>
+              <div className='flex items-center gap-4'>
+                <p className='text-sm sm:text-base md:text-lg lg:text-xl text-[#ffffff]'>
+                  Secrétaire
+                </p>
+                <Link
+                  to='https://www.linkedin.com/in/helena-dagnogo-4ab4aa178'
+                  target='blank'
+                >
+                  <img
+                    className='object-contain w-[20px] min-w-[20px] h-auto'
+                    src={Linkedin}
+                    alt='Logo Linkedin'
+                  />
+                </Link>
+              </div>
+            </div>
           </div>
-          <div className='italic text-sm font-bold rounded  mr-auto'>
+          <div className='text-sm font-bold  relative flex items-center mr-auto'>
             <img className='object-cover' src={Clarisse} alt='Image Clarisse' />
+            <div className='absolute left-1/2 transform -translate-x-1/2 top-1/2 -translate-y-1/2 w-[30%] flex flex-col items-end'>
+              <h2 className='text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-[#fdcd23] whitespace-nowrap'>
+                Clarisse BEGUIN
+              </h2>
+              <div className='flex items-center flex-row-reverse gap-4'>
+                <p className='text-sm sm:text-base md:text-lg lg:text-xl text-[#ffffff]'>
+                  Trésorière
+                </p>
+                <Link
+                  to='https://www.linkedin.com/in/helena-dagnogo-4ab4aa178'
+                  target='blank'
+                >
+                  <img
+                    className='object-contain w-[20px] min-w-[20px] h-auto'
+                    src={Linkedin}
+                    alt='Logo Linkedin'
+                  />
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </section>

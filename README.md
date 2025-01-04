@@ -1,6 +1,6 @@
 # Réunies: Entrepreneuriat au Féminin
 
-Réunies est une association dédiée à la mise en relation, au soutien et à la promotion des femmes entrepreneures. Le site réunies est un site vitrine qui réalisé pour l'association. Il permet aux membres de se connecter, et d'effectuer d'avoir des informations sur les femmes entrepreneures inscrites sur la plaforme.
+Réunies est une association dédiée à la mise en relation, au soutien et à la promotion des femmes entrepreneures. Le site reunies est un site vitrine réalisé pour l'association. Il permet aux membres de se connecter, et d'effectuer d'avoir des informations sur les femmes entrepreneures inscrites sur la plaforme.
 
 ## Table des matières
 
