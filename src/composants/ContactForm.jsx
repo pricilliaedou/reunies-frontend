@@ -2,7 +2,7 @@ const ContactForm = () => {
   return (
     <form
       id='contact'
-      action='/success'
+      action='/succes'
       name='contact-reunies'
       method='POST'
       data-netlify='true'
