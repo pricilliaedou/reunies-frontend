@@ -7,6 +7,7 @@ import Accueil from "./routes/Accueil";
 import Connexion from "./routes/Connexion";
 import Inscription from "./routes/Inscription";
 import Reseautage from "./routes/Reseautage";
+import Succes from "./routes/Succes";
 import Erreur from "./routes/Erreur";
 
 // Composants
@@ -157,6 +158,7 @@ function App() {
             </Layout>
           }
         />
+        <Route path='/succes' element={<Succes />} />
         <Route path='*' element={<Erreur />} />
       </Routes>
     </Router>
