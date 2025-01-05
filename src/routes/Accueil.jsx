@@ -116,11 +116,11 @@ const Accueil = () => {
                 Olga MADZIGON
               </h2>
               <div className='flex items-center gap-4 flex-row-reverse'>
-                <p className='text-sm sm:text-base md:text-lg lg:text-xl text-[#ffffff]'>
-                  Vice-présidente & responsable des formations et ateliers
+                <p className='text-sm sm:text-base md:text-lg lg:text-xl text-[#ffffff]  '>
+                  Vice-présidente
                 </p>
                 <Link
-                  to='https://www.linkedin.com/in/helena-dagnogo-4ab4aa178'
+                  to='https://www.linkedin.com/in/olga-madzigon-744030107/'
                   target='blank'
                 >
                   <img
@@ -143,7 +143,7 @@ const Accueil = () => {
                   Secrétaire
                 </p>
                 <Link
-                  to='https://www.linkedin.com/in/helena-dagnogo-4ab4aa178'
+                  to='https://www.linkedin.com/in/dora-moualhi-6a7a08242/'
                   target='blank'
                 >
                   <img
@@ -166,7 +166,7 @@ const Accueil = () => {
                   Trésorière
                 </p>
                 <Link
-                  to='https://www.linkedin.com/in/helena-dagnogo-4ab4aa178'
+                  to='https://www.linkedin.com/in/clarisse-beguin-65a5a5117/'
                   target='blank'
                 >
                   <img

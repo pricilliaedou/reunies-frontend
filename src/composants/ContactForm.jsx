@@ -5,11 +5,13 @@ const ContactForm = () => {
       name='contact-reunies'
       method='POST'
       data-netlify='true'
+      data-netlify-honeypot='bot-field'
       className='max-w-md mx-auto bg-white p-6 rounded-md mb-[120px]'
       style={{ boxShadow: "0 10px 15px rgba(0, 0, 0, 0.2)" }}
     >
       <input type='hidden' name='form-name' value='contact-reunies' />
-      <h2 className='text-2xl font-semi-bold mb-4 text-[#bc378c] tracking-wide'>
+      <input type='hidden' name='bot-field' />
+      <h2 className='text-2xl font-semibold mb-4 text-[#bc378c] tracking-wide'>
         Une question?
       </h2>
 
