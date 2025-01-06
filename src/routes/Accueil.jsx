@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 import ContactForm from "../composants/ContactForm";
 import Histoire from "../assets/histoire.jpg";
-import Benevole from "../assets/benevole.webp";
+// import Benevole from "../assets/benevole.webp";
+import Hero from "../assets/hero.webp";
 import Actions from "../assets/actions.png";
 import Helena from "../assets/helena.png";
 import Olga from "../assets/olga.png";
@@ -180,18 +181,35 @@ const Accueil = () => {
           </div>
         </div>
       </section>
-
       <section
-        className='h-[400px] bg-fixed  bg-contain bg-no-repeat  bg-center flex justify-center items-center text-white text-center mt-4'
+        className='relative w-full flex justify-center items-center text-white text-center'
         style={{
-          backgroundImage: `url(${Benevole})`,
+          backgroundImage: `url(${Hero})`,
+          backgroundSize: "contain",
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "center",
+          aspectRatio: "16/9",
         }}
-      ></section>
+      >
+        <div className='absolute inset-0 flex flex-col justify-center items-center px-4'>
+          <h2 className='font-bold text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl mb-4'>
+            Vous souhaitez rejoindre l'aventure?
+          </h2>
+          <a
+            href='mailto:programme.reunies@gmail.com'
+            target='_blank'
+            rel='noopener noreferrer'
+            className='bg-[#fdcd23] text-[#ffffff] py-2 px-6 rounded font-semibold text-sm sm:text-base md:text-lg lg:text-xl'
+          >
+            Oui je souhaite devenir bénévole
+          </a>
+        </div>
+      </section>
 
       <section className=' px-4 mx-auto' id='actions'>
         <div className='flex flex-col md:flex-row'>
           <div className='flex flex-col  w-full md:w-3/5  '>
-            <h2 className='text-2xl pt-12 font-bold text-start text-[#bc378c]  tracking-wide'>
+            <h2 className='text-2xl pt-2 font-bold text-start text-[#bc378c]  tracking-wide'>
               Nos actions
             </h2>
             <p className='mt-4 text-[#bc378c] font-semibold leading-relaxed'>
