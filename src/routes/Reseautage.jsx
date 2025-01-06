@@ -1,7 +1,9 @@
 import { useState } from "react";
 import axios from "axios";
 
-const Reseautage = ({ activites, regions }) => {
+import { activites, regions } from "../utils/constantes";
+
+const Reseautage = () => {
   const [selectedActivite, setSelectedActivite] = useState("");
   const [users, setUsers] = useState([]);
   const [filteredUsers, setFilteredUsers] = useState([]);
@@ -77,7 +79,7 @@ const Reseautage = ({ activites, regions }) => {
         </select>
         <button
           onClick={handleSearch}
-          className='bg-[#fdcd23] text-white px-8 py-2 ml-2 rounded mt-8'
+          className='bg-[#fdcd23] hover:bg-[#e6b91f] text-white px-8 py-2 ml-2 rounded mt-8'
         >
           Rechercher
         </button>
@@ -111,18 +113,32 @@ const Reseautage = ({ activites, regions }) => {
         {filteredUsers.map((user, index) => (
           <div
             key={index}
-            className='card border p-4 shadow rounded flex flex-col items-center'
+            className='card border p-4 shadow rounded flex flex-col text-[#bc378c] h-full'
           >
-            <img
-              src={`/images/activites/${user.activite}.png`}
-              alt={user.activite}
-              className='w-20 h-20 object-cover mb-4'
-            />
-            <h2 className='font-bold'>{user.entreprise}</h2>
-            <p className='text-sm'>{user.description}</p>
-            <p className='text-sm'>
+            <h2 className='font-bold mb-2 text-lg'>
+              {user.entreprise.toUpperCase()}
+            </h2>
+            <p className='text-base mb-1'>
               {user.region} - {user.ville}
             </p>
+            <p className='text-base mb-1 italic'>{user.activite}</p>
+            <p
+              className='text-sm text-[#b4b4b4] italic mb-1 overflow-hidden'
+              style={{
+                display: "-webkit-box",
+                WebkitLineClamp: 3,
+                WebkitBoxOrient: "vertical",
+              }}
+            >
+              {user.description}
+            </p>
+            {user.site ? (
+              <a href={user.site} target='blank'>
+                Visitez notre site
+              </a>
+            ) : (
+              ""
+            )}
           </div>
         ))}
       </div>

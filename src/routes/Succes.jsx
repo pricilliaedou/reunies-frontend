@@ -43,7 +43,7 @@ const Succes = () => {
       </div>
 
       <div className='flex px-4 py-3 justify-center'>
-        <button className='flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-12 px-5 flex-1 text-base bg-[#fdcd23] text-[#ffffff] font-bold leading-normal tracking-[0.015em] '>
+        <button className='flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-12 px-5 flex-1 text-base bg-[#fdcd23] text-[#ffffff] hover:bg-[#e6b91f] font-bold leading-normal tracking-[0.015em] '>
           <a href='/'>
             <span className='truncate'>Retour vers l'accueil</span>
           </a>

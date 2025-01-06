@@ -1,18 +1,10 @@
-//
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
-const Inscription = ({ setUser, activites, regions }) => {
-  // const activites = [
-  //   "Informatique",
-  //   "Santé",
-  //   "Commerce",
-  //   "Éducation",
-  //   "Transport",
-  //   "Tourisme",
-  // ];
+import { activites, regions } from "../utils/constantes";
 
+const Inscription = ({ setUser }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [username, setUsername] = useState("");
@@ -28,33 +20,10 @@ const Inscription = ({ setUser, activites, regions }) => {
   const [commentaire, setCommentaire] = useState("");
   const [errorMessage, setErrorMessage] = useState(null);
 
-  // const regions = [
-  //   "Auvergne-Rhône-Alpes",
-  //   "Bourgogne-Franche-Comté",
-  //   "Bretagne",
-  //   "Centre-Val de Loire",
-  //   "Corse",
-  //   "Grand Est",
-  //   "Hauts-de-France",
-  //   "Île-de-France",
-  //   "Normandie",
-  //   "Nouvelle-Aquitaine",
-  //   "Occitanie",
-  //   "Pays de la Loire",
-  //   "Provence-Alpes-Côte d’Azur",
-  //   "Guadeloupe",
-  //   "Martinique",
-  //   "Guyane",
-  //   "La Réunion",
-  //   "Mayotte",
-  // ];
-
   const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-
-    // Validation frontend
     if (
       !email.trim() ||
       !password.trim() ||
@@ -69,15 +38,15 @@ const Inscription = ({ setUser, activites, regions }) => {
       return;
     }
 
-    if (description && description.length > 50) {
-      setErrorMessage("La description ne doit pas dépasser 50 caractères.");
+    if (description && description.length > 200) {
+      setErrorMessage("La description ne doit pas dépasser 200 caractères.");
       return;
     }
 
-    // if (site && !/^https?:\/\/[\w.-]+\.[a-z]{2,6}/.test(site)) {
-    //   setErrorMessage("L'URL du site est invalide.");
-    //   return;
-    // }
+    if (site && !/^https?:\/\/[\w.-]+\.[a-z]{2,}$/i.test(site)) {
+      setErrorMessage("L'URL du site est invalide.");
+      return;
+    }
 
     try {
       const payload = {
@@ -99,20 +68,6 @@ const Inscription = ({ setUser, activites, regions }) => {
       const response = await axios.post(
         `${import.meta.env.VITE_BACKEND_URL}/inscription`,
         payload
-        // {
-        //   email: email.trim(),
-        //   password,
-        //   username: username.trim(),
-        //   nom: nom.trim(),
-        //   prenom: prenom.trim(),
-        //   ville: ville.trim(),
-        //   region: region.trim(),
-        //   entreprise: entreprise.trim(),
-        //   activite,
-        //   description: description.trim(),
-        //   reseaux: reseaux.trim(),
-        //   site: site.trim(),
-        // }
       );
       console.log(response.data.token);
       if (response.data.token) {
@@ -123,7 +78,6 @@ const Inscription = ({ setUser, activites, regions }) => {
     } catch (error) {
       console.log(error);
       if (error.response && error.response.status === 409) {
-        // Affiche le message d'erreur du backend
         setErrorMessage(error.response.data.error);
       } else {
         setErrorMessage("Une erreur est survenue. Veuillez réessayer.");
@@ -136,19 +90,20 @@ const Inscription = ({ setUser, activites, regions }) => {
       onSubmit={handleSubmit}
       className='max-w-2xl mx-auto bg-white p-6 rounded-md shadow-md space-y-6'
     >
-      <h2 className='text-xl font-bold text-center'>Créer un compte</h2>
+      <h2 className='text-xl text-[#bc378c] font-bold text-center'>
+        Racontez-nous tout
+      </h2>
       {errorMessage && (
         <p className='text-red-500 text-center'>{errorMessage}</p>
       )}
 
-      {/* Username, Nom, Prénom */}
       <div className='space-y-4'>
         <input
           type='text'
           placeholder='Username'
           value={username}
           onChange={(e) => setUsername(e.target.value)}
-          className='w-full border border-[#bc378c] rounded-md p-3 text-sm focus:ring-blue-500 focus:border-blue-500'
+          className='w-full border border-[#bc378c] rounded-md p-3 text-sm'
           required
         />
         <input
@@ -156,7 +111,7 @@ const Inscription = ({ setUser, activites, regions }) => {
           placeholder='Nom'
           value={nom}
           onChange={(e) => setNom(e.target.value)}
-          className='w-full border border-[#bc378c] rounded-md p-3 text-sm focus:ring-blue-500 focus:border-blue-500'
+          className='w-full border border-[#bc378c] rounded-md p-3 text-sm'
           required
         />
         <input
@@ -164,7 +119,7 @@ const Inscription = ({ setUser, activites, regions }) => {
           placeholder='Prénom'
           value={prenom}
           onChange={(e) => setPrenom(e.target.value)}
-          className='w-full border border-[#bc378c] rounded-md p-3 text-sm focus:ring-blue-500 focus:border-blue-500'
+          className='w-full border border-[#bc378c] rounded-md p-3 text-sm'
           required
         />
       </div>
@@ -172,10 +127,10 @@ const Inscription = ({ setUser, activites, regions }) => {
       <div className='flex space-x-4'>
         <input
           type='email'
-          placeholder='Email'
+          placeholder='email@exemple.fr'
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className='flex-1 border border-[#bc378c] rounded-md p-3 text-sm focus:ring-blue-500 focus:border-blue-500'
+          className='flex-1 border border-[#bc378c] rounded-md p-3 text-sm'
           required
         />
         <input
@@ -183,7 +138,7 @@ const Inscription = ({ setUser, activites, regions }) => {
           placeholder='Mot de passe'
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          className='flex-1 border border-[#bc378c] rounded-md p-3 text-sm focus:ring-blue-500 focus:border-blue-500'
+          className='flex-1 border border-[#bc378c] rounded-md p-3 text-sm'
           required
         />
       </div>
@@ -194,13 +149,13 @@ const Inscription = ({ setUser, activites, regions }) => {
           placeholder='Ville'
           value={ville}
           onChange={(e) => setVille(e.target.value)}
-          className='flex-1 border border-[#bc378c] rounded-md p-3 text-sm focus:ring-blue-500 focus:border-blue-500'
+          className='flex-1 border border-[#bc378c] rounded-md p-3 text-sm'
           required
         />
         <select
           value={region}
           onChange={(e) => setRegion(e.target.value)}
-          className='flex-1 border border-[#bc378c] rounded-md p-3 text-sm focus:ring-blue-500 focus:border-blue-500'
+          className='flex-1 border border-[#bc378c] rounded-md p-3 text-sm'
           required
         >
           <option value=''>Sélectionnez une région</option>
@@ -218,13 +173,13 @@ const Inscription = ({ setUser, activites, regions }) => {
           placeholder='Nom de votre entreprise'
           value={entreprise}
           onChange={(e) => setEntreprise(e.target.value)}
-          className='flex-1 border border-[#bc378c] rounded-md p-3 text-sm focus:ring-blue-500 focus:border-blue-500'
+          className='flex-1 border border-[#bc378c] rounded-md p-3 text-sm'
           required
         />
         <select
           value={activite}
           onChange={(e) => setActivite(e.target.value)}
-          className='flex-1 border border-[#bc378c] rounded-md p-3 text-sm focus:ring-blue-500 focus:border-blue-500'
+          className='flex-1 border border-[#bc378c] rounded-md p-3 text-sm'
           required
         >
           <option value=''>Secteur d'activité</option>
@@ -237,27 +192,27 @@ const Inscription = ({ setUser, activites, regions }) => {
       </div>
 
       <textarea
-        placeholder='Description (max. 50 caractères)'
+        placeholder='Description (max. 200 caractères)'
         value={description}
         onChange={(e) => setDescription(e.target.value)}
         rows='2'
-        className='w-full border border-[#bc378c] rounded-md p-3 text-sm focus:ring-blue-500 focus:border-blue-500'
+        className='w-full border border-[#bc378c] rounded-md p-3 text-sm'
       ></textarea>
 
       <div className='flex space-x-4'>
         <input
           type='text'
-          placeholder='Site Internet'
+          placeholder='https://www.example.fr'
           value={site}
           onChange={(e) => setSite(e.target.value)}
-          className='flex-1 border border-[#bc378c] rounded-md p-3 text-sm focus:ring-blue-500 focus:border-blue-500'
+          className='flex-1 border border-[#bc378c] rounded-md p-3 text-sm'
         />
         <input
           type='text'
           placeholder='Réseaux sociaux'
           value={reseaux}
           onChange={(e) => setReseaux(e.target.value)}
-          className='flex-1 border border-[#bc378c] rounded-md p-3 text-sm focus:ring-blue-500 focus:border-blue-500'
+          className='flex-1 border border-[#bc378c] rounded-md p-3 text-sm'
         />
       </div>
 
@@ -266,7 +221,7 @@ const Inscription = ({ setUser, activites, regions }) => {
         value={commentaire}
         onChange={(e) => setCommentaire(e.target.value)}
         rows='4'
-        className='w-full border border-[#bc378c] rounded-md p-3 text-sm focus:ring-blue-500 focus:border-blue-500'
+        className='w-full border border-[#bc378c] rounded-md p-3 text-sm'
       ></textarea>
 
       <button

@@ -1,7 +1,6 @@
 const ContactForm = () => {
   return (
     <form
-      id='contact'
       action='/succes'
       name='contact-reunies'
       method='POST'
@@ -22,7 +21,7 @@ const ContactForm = () => {
             type='text'
             name='nom_prenom'
             placeholder='Nom et Prénom'
-            className='block w-full border border-[#bc378c] rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 p-2'
+            className='block w-full border border-[#bc378c] rounded-md shadow-sm p-2'
             required
           />
         </div>
@@ -31,7 +30,7 @@ const ContactForm = () => {
             type='email'
             name='email'
             placeholder='Adresse mail'
-            className='block w-full border border-[#bc378c] rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 p-2'
+            className='block w-full border border-[#bc378c] rounded-md shadow-sm p-2'
             required
           />
         </div>
@@ -41,14 +40,14 @@ const ContactForm = () => {
           name='message'
           placeholder='Message'
           rows='4'
-          className='block w-full border border-[#bc378c] rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 p-2'
+          className='block w-full border border-[#bc378c] rounded-md shadow-sm p-2'
           required
         ></textarea>
       </div>
 
       <button
         type='submit'
-        className='bg-[#fdcd23] text-[#ffffff] font-bold py-2 px-4 rounded-md w-full'
+        className='bg-[#fdcd23] hover:bg-[#e6b91f] text-[#ffffff] font-bold py-2 px-4 rounded-md w-full'
       >
         Envoyer
       </button>

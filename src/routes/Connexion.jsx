@@ -129,7 +129,7 @@ const Connexion = ({ setUser }) => {
 
             <button
               type='submit'
-              className='block w-full rounded-lg bg-[#fdcd23] text-[#ffffff] font-bold px-5 py-3 font-medium text-white'
+              className='block w-full rounded-lg bg-[#fdcd23] hover:bg-[#e6b91f] text-[#ffffff] font-bold px-5 py-3 font-medium text-white'
             >
               Je me connecte
             </button>
