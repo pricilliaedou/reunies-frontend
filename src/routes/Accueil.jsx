@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import ContactForm from "../composants/ContactForm";
 import Histoire from "../assets/histoire.jpg";
-// import Benevole from "../assets/benevole.webp";
 import Hero from "../assets/hero.webp";
 import Actions from "../assets/actions.png";
 import Helena from "../assets/helena.png";
